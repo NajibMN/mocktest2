@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: nginxdaemon
+  namespace: qq3
+spec:
+  selector:
+    matchLabels:
+      app: nginxdaemon
+  template:
+    metadata:
+      labels:
+        app: nginxdaemon
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+        ports:
+        - containerPort: 80
+
